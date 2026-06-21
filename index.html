@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Боранбек Нұрислам — Full-stack Developer. Профессионал деңгейде код арқылы сайттар жасаймын, деплой жасап беремін. Шымкент.">
+  <title>Боранбек Нұрислам | Full-stack Developer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="has-promo-banner">
+
+  <!-- ===== УАҚЫТША ЖЕҢІЛДІК БАННЕРІ — алу үшін осы блокты өшіріңіз ===== -->
+  <aside class="promo-banner" id="promoBanner" role="note" aria-label="Жеңілдік акциясы">
+    <div class="promo-banner__inner">
+      <span class="promo-banner__tag">🔥 Акция</span>
+      <p class="promo-banner__text">
+        Дәл қазір тапсырыс берсеңіз — <strong>90% жеңілдік</strong>!
+      </p>
+      <a href="#contact" class="promo-banner__cta">Тапсырыс беру</a>
+      <button type="button" class="promo-banner__close" id="promoClose" aria-label="Баннерді жабу">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+  </aside>
+  <!-- ===== УАҚЫТША ЖЕҢІЛДІК БАННЕРІ СОҢЫ ===== -->
+
+  <!-- Артқы фон — неонды бұлдыр шеңберлер -->
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-purple"></div>
+    <div class="orb orb-blue"></div>
+    <div class="orb orb-violet"></div>
+  </div>
+
+  <!-- ===== HEADER / NAVIGATION ===== -->
+  <header class="header" id="header">
+    <nav class="nav glass" aria-label="Негізгі навигация">
+      <a href="#hero" class="nav__logo">
+        <span class="nav__logo-icon">&lt;/&gt;</span>
+        <span class="nav__logo-text">NURIS<span class="accent">.dev</span></span>
+      </a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Мәзірді ашу" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#about" class="nav__link">Мен туралы</a></li>
+        <li><a href="#projects" class="nav__link">Жобалар</a></li>
+        <li><a href="#services" class="nav__link">Қызметтер</a></li>
+        <li><a href="#contact" class="nav__link nav__link--cta">Контактілер</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <!-- УАҚЫТША ЖЕҢІЛДІК — алу үшін осы жолды өшіріңіз -->
+          <a href="#contact" class="hero__promo glass">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Дәл қазір тапсырыс берсеңіз — <strong>90% жеңілдік</strong></span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <!-- УАҚЫТША ЖЕҢІЛДІК СОҢЫ -->
+
+          <span class="hero__badge glass">✦ Full-stack Developer / Web-әзірлеуші · Шымкент</span>
+          <h1 class="hero__title">
+            Күрделі интерфейстерді <span class="gradient-text">профессионал деңгейде</span> код арқылы жинап, интернетке толықтай шығарып (деплой) беремін
+          </h1>
+          <p class="hero__desc">
+            Мен сайтты профессионал деңгейде жасап беремін — бұл дегенді Tilda, Canva сияқты дайын шаблон немесе конструкторлар арқылы емес, толықтай код (HTML5, CSS3, JavaScript, React, Python, SQL, C#, Git) арқылы жазып, оған сілтемені өз қалауыңызша қойып, интернеттен еркін көрінетіндей етемін.
+          </p>
+          <div class="hero__actions">
+            <a href="#projects" class="btn btn--primary">
+              <span>Жұмыстарды көру</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn btn--ghost">
+              <span>Байланысу</span>
+            </a>
+          </div>
+          <div class="hero__stats">
+            <div class="hero__stat glass">
+              <strong>Full-stack</strong>
+              <span>Әзірлеуші</span>
+            </div>
+            <div class="hero__stat glass">
+              <strong>SEO</strong>
+              <span>Дайын құрылым</span>
+            </div>
+            <div class="hero__stat glass">
+              <strong>100%</strong>
+              <span>Таза код</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Интерактивті код элементі -->
+        <div class="hero__visual">
+          <div class="code-window glass">
+            <div class="code-window__bar">
+              <span class="dot dot--red"></span>
+              <span class="dot dot--yellow"></span>
+              <span class="dot dot--green"></span>
+              <span class="code-window__title">portfolio.js</span>
+            </div>
+            <pre class="code-window__body" id="codeDisplay"><code><span class="code-keyword">const</span> <span class="code-var">developer</span> = {
+  <span class="code-prop">name</span>: <span class="code-string">"Боранбек Нұрислам"</span>,
+  <span class="code-prop">role</span>: <span class="code-string">"Full-stack Developer"</span>,
+  <span class="code-prop">city</span>: <span class="code-string">"Шымкент"</span>,
+  <span class="code-prop">skills</span>: [
+    <span class="code-string">"React"</span>, <span class="code-string">"Python"</span>,
+    <span class="code-string">"C#"</span>, <span class="code-string">"SQL"</span>
+  ],
+  <span class="code-prop">available</span>: <span class="code-bool">true</span>
+};
+
+<span class="code-keyword">export default</span> developer;</code></pre>
+          </div>
+          <div class="hero__portrait glass">
+            <img
+              src="images/portrait.png"
+              alt="Боранбек Нұрислам — Full-stack Developer"
+              class="hero__portrait-img"
+              loading="eager"
+            >
+            <div class="hero__portrait-ring" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT & TECH STACK ===== -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag">Мен туралы</span>
+          <h2 class="section__title">Кәсіби <span class="gradient-text">тәжірибе</span></h2>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__text glass">
+            <p>
+              Мен — ақпараттық жүйелер және бағдарламалық инженерия бағытында маманданған <strong>Full-stack Developer</strong> / веб-әзірлеушімін. Манап Өтебаев атындағы жоғарғы жаңа технологиялар колледжін «Бағдарламалық қамтамасыз ету» мамандығы бойынша аяқтадым.
+            </p>
+            <p>
+              Теория мен практиканы ұштастыра отырып, клиенттердің мәселесін шешетін, іздеу жүйелеріне (SEO) ыңғайлы және мобильді телефондарда мінсіз жұмыс істейтін сайттар жасаймын. Сапалы код пен заманауи дизайн — менің басты ұстанымым.
+            </p>
+            <ul class="about__highlights">
+              <li><i class="fa-solid fa-check"></i> SEO-ға ыңғайлы құрылым</li>
+              <li><i class="fa-solid fa-check"></i> Мобильді телефондарда мінсіз жұмыс</li>
+              <li><i class="fa-solid fa-check"></i> Сапалы код пен заманауи дизайн</li>
+            </ul>
+          </div>
+
+          <div class="tech-stack">
+            <h3 class="tech-stack__title">Технологиялар</h3>
+            <div class="tech-stack__grid">
+              <div class="tech-tag glass">
+                <i class="fa-brands fa-html5"></i>
+                <span>HTML5</span>
+              </div>
+              <div class="tech-tag glass">
+                <i class="fa-brands fa-css3-alt"></i>
+                <span>CSS3</span>
+              </div>
+              <div class="tech-tag glass">
+                <i class="fa-brands fa-js"></i>
+                <span>JavaScript</span>
+              </div>
+              <div class="tech-tag glass">
+                <i class="fa-brands fa-react"></i>
+                <span>React</span>
+              </div>
+              <div class="tech-tag glass">
+                <i class="fa-brands fa-python"></i>
+                <span>Python</span>
+              </div>
+              <div class="tech-tag glass">
+                <i class="fa-solid fa-database"></i>
+                <span>SQL</span>
+              </div>
+              <div class="tech-tag glass">
+                <i class="fa-brands fa-microsoft"></i>
+                <span>C#</span>
+              </div>
+              <div class="tech-tag glass">
+                <i class="fa-brands fa-git-alt"></i>
+                <span>Git</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="projects section" id="projects">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag">Портфолио</span>
+          <h2 class="section__title">Таңдаулы <span class="gradient-text">жобалар</span></h2>
+          <p class="section__desc">Соңғы жобаларымнан бірнеше мысал</p>
+        </div>
+
+        <div class="projects__grid projects__grid--two">
+          <!-- Жоба 1: Abadan -->
+          <article class="project-card glass">
+            <div class="project-card__image">
+              <img
+                src="images/abadan.png"
+                alt="Abadan — ұлттық тәрбие лагері веб-сайты"
+                class="project-card__img"
+                loading="lazy"
+              >
+              <div class="project-card__overlay">
+                <span class="project-card__category">Білім беру</span>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Abadan</h3>
+              <p class="project-card__desc">Ұлттық білім беру лагері жобасына арналған ресми веб-сайт. Лагерь негізін қалаушының өмірбаяны, бағдарлама және клиенттерден өтінім қабылдау жүйесі толық іске асырылған.</p>
+              <div class="project-card__tags">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="https://nurissingo.github.io/abadan-site/" class="btn btn--sm btn--primary" target="_blank" rel="noopener">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
+                <a href="https://github.com/nurissingo/abadan-site" class="btn btn--sm btn--ghost" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-github"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Жоба 2: TulparAutoKaz -->
+          <article class="project-card glass">
+            <div class="project-card__image">
+              <img
+                src="images/tulparautokaz.png"
+                alt="TulparAutoKaz — премиум автокөлік сайты"
+                class="project-card__img"
+                loading="lazy"
+              >
+              <div class="project-card__overlay">
+                <span class="project-card__category">Автокөлік</span>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">TulparAutoKaz</h3>
+              <p class="project-card__desc">Премиум автокөліктерді шет елден Қазақстанға жеткізіп сататын компанияның жеке сайты.</p>
+              <div class="project-card__tags">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>Node.js</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="https://www.tulparautokaz.kz/index.html" class="btn btn--sm btn--primary" target="_blank" rel="noopener">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
+                <a href="https://github.com/nurissingo/tulparautokaz" class="btn btn--sm btn--ghost" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-github"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services section" id="services">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag">Қызметтер</span>
+          <h2 class="section__title">Мен ұсынатын <span class="gradient-text">қызметтер</span></h2>
+          <p class="section__desc">Жобаңызға сай келетін шешімді таңдап, байланысыңыз</p>
+        </div>
+
+        <div class="services__grid">
+          <div class="service-card glass">
+            <div class="service-card__icon">
+              <i class="fa-solid fa-pager"></i>
+            </div>
+            <h3 class="service-card__title">Landing Page және Визитка сайттар</h3>
+            <p class="service-card__desc">
+              Нарыққа жаңадан шыққан бизнестер немесе жеке мамандар үшін ең тиімді бір беттік сайттар.
+            </p>
+            <ul class="service-card__features">
+              <li><i class="fa-solid fa-check"></i> Заманауи UI/UX дизайн</li>
+              <li><i class="fa-solid fa-check"></i> Mobile-first құрылым</li>
+              <li><i class="fa-solid fa-check"></i> Байланыс формасы</li>
+              <li><i class="fa-solid fa-check"></i> Деплой және доменге қосу</li>
+            </ul>
+            <a href="#contact" class="btn btn--primary btn--full">Тапсырыс беру</a>
+          </div>
+
+          <div class="service-card glass service-card--featured">
+            <div class="service-card__badge">Танымал</div>
+            <div class="service-card__icon">
+              <i class="fa-solid fa-server"></i>
+            </div>
+            <h3 class="service-card__title">Күрделі веб-қосымшалар мен Backend</h3>
+            <p class="service-card__desc">
+              Деректер қорымен жұмыс істейтін, қолданушы тіркеле алатын және админ панелі бар функционалды жүйелер.
+            </p>
+            <ul class="service-card__features">
+              <li><i class="fa-solid fa-check"></i> Деректер қоры интеграциясы</li>
+              <li><i class="fa-solid fa-check"></i> Пайдаланушы тіркелу жүйесі</li>
+              <li><i class="fa-solid fa-check"></i> Админ басқару панелі</li>
+              <li><i class="fa-solid fa-check"></i> API әзірлеу</li>
+            </ul>
+            <a href="#contact" class="btn btn--primary btn--full">Тапсырыс беру</a>
+          </div>
+
+          <div class="service-card glass">
+            <div class="service-card__icon">
+              <i class="fa-solid fa-gauge-high"></i>
+            </div>
+            <h3 class="service-card__title">Сайттарды реттеу және оптимизация</h3>
+            <p class="service-card__desc">
+              Дайын сайттардағы қателерді (багтарды) жөндеу, жылдамдығын арттыру және код сапасын жақсарту.
+            </p>
+            <ul class="service-card__features">
+              <li><i class="fa-solid fa-check"></i> Багтарды жөндеу</li>
+              <li><i class="fa-solid fa-check"></i> Жылдамдықты арттыру</li>
+              <li><i class="fa-solid fa-check"></i> Код сапасын жақсарту</li>
+              <li><i class="fa-solid fa-check"></i> SEO аудит</li>
+            </ul>
+            <a href="#contact" class="btn btn--primary btn--full">Тапсырыс беру</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag">Байланыс</span>
+          <h2 class="section__title">Жобаңызды <span class="gradient-text">талқылайық</span></h2>
+          <p class="section__desc">Форманы толтырыңыз — хабарлама WhatsApp-қа ашылады</p>
+        </div>
+
+        <div class="contact__grid">
+          <form class="contact__form glass" id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="name">Атыңыз</label>
+              <input type="text" id="name" name="name" placeholder="Атыңызды енгізіңіз" required>
+              <span class="form-error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="email">Пошта</label>
+              <input type="email" id="email" name="email" placeholder="email@example.com" required>
+              <span class="form-error" id="emailError"></span>
+            </div>
+            <div class="form-group">
+              <label for="message">Хабарлама</label>
+              <textarea id="message" name="message" rows="5" placeholder="Жобаңыз туралы қысқаша жазыңыз..." required></textarea>
+              <span class="form-error" id="messageError"></span>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">
+              <span>WhatsApp арқылы жіберу</span>
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+            <p class="form-hint">Жіберу батырмасын басқанда WhatsApp ашылады — хабарламаны растап жіберіңіз</p>
+            <div class="form-success" id="formSuccess" hidden>
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>WhatsApp ашылды! Хабарламаны растап жіберіңіз — жақын арада жауап беремін.</span>
+            </div>
+          </form>
+
+          <div class="contact__info">
+            <div class="contact__card glass">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:nachonike17@gmail.com">nachonike17@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact__card glass">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <strong>Орналасқан жері</strong>
+                <span>Шымкент, Қазақстан</span>
+              </div>
+            </div>
+            <div class="contact__card glass">
+              <i class="fa-solid fa-clock"></i>
+              <div>
+                <strong>Жауап уақыты</strong>
+                <span>24 сағат ішінде</span>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="https://t.me/nurissingo" class="social-link glass" target="_blank" rel="noopener" aria-label="Telegram">
+                <i class="fa-brands fa-telegram"></i>
+              </a>
+              <a href="https://wa.me/+77074312016" class="social-link glass" target="_blank" rel="noopener" aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+              <a href="https://instagram.com/nurissingo" class="social-link glass" target="_blank" rel="noopener" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://github.com/nurissingo" class="social-link glass" target="_blank" rel="noopener" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2026 Боранбек Нұрислам Маккайлұлы. Барлық құқықтар қорғалған.</p>
+      <p class="footer__made">Жасалған <i class="fa-solid fa-heart"></i> мен <i class="fa-solid fa-code"></i> арқылы</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
