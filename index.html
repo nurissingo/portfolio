@@ -88,28 +88,8 @@
           </div>
         </div>
 
-        <!-- Интерактивті код элементі -->
-        <div class="hero__visual">
-          <div class="code-window glass">
-            <div class="code-window__bar">
-              <span class="dot dot--red"></span>
-              <span class="dot dot--yellow"></span>
-              <span class="dot dot--green"></span>
-              <span class="code-window__title">portfolio.js</span>
-            </div>
-            <pre class="code-window__body" id="codeDisplay"><code><span class="code-keyword">const</span> <span class="code-var">developer</span> = {
-  <span class="code-prop">name</span>: <span class="code-string">"Боранбек Нұрислам"</span>,
-  <span class="code-prop">role</span>: <span class="code-string">"Full-stack Developer"</span>,
-  <span class="code-prop">city</span>: <span class="code-string">"Шымкент"</span>,
-  <span class="code-prop">skills</span>: [
-    <span class="code-string">"React"</span>, <span class="code-string">"Python"</span>,
-    <span class="code-string">"C#"</span>, <span class="code-string">"SQL"</span>
-  ],
-  <span class="code-prop">available</span>: <span class="code-bool">true</span>
-};
-
-<span class="code-keyword">export default</span> developer;</code></pre>
-          </div>
+        <!-- 3D ноутбук canvas-та; мұнда тек портрет -->
+        <div class="hero__visual hero__visual--portrait-only">
           <div class="hero__portrait glass">
             <img
               src="images/portrait.png"
@@ -126,13 +106,7 @@
     <!-- ===== 3D SCROLL STAGE (Section 1–3) ===== -->
     <div id="scroll-stage" class="scroll-stage">
 
-    <!-- Section 1: About — 0° -->
     <section class="about section scroll-section" id="about" data-section="1">
-      <div class="scroll-section__hint glass">
-        <span>Section 01</span>
-        <strong>0° ракурс</strong>
-        <p>Мен туралы — 3D қол бастапқы позицияда</p>
-      </div>
       <div class="container">
         <div class="section__header">
           <span class="section__tag">Мен туралы</span>
@@ -195,13 +169,7 @@
       </div>
     </section>
 
-    <!-- Section 2: Projects — 90° -->
     <section class="projects section scroll-section" id="projects" data-section="2">
-      <div class="scroll-section__hint glass">
-        <span>Section 02</span>
-        <strong>90° ракурс</strong>
-        <p>Жобалар — қол бүйірден көрінеді</p>
-      </div>
       <div class="container">
         <div class="section__header">
           <span class="section__tag">Портфолио</span>
@@ -396,13 +364,7 @@
       </div>
     </section>
 
-    <!-- Section 3: Services — 180° -->
     <section class="services section scroll-section" id="services" data-section="3">
-      <div class="scroll-section__hint glass">
-        <span>Section 03</span>
-        <strong>180° ракурс</strong>
-        <p>Қызметтер — қол толық бұрылған</p>
-      </div>
       <div class="container">
         <div class="section__header">
           <span class="section__tag">Қызметтер</span>

@@ -27,7 +27,27 @@ footer {
   z-index: 1000;
 }
 
-/* Үш скролл бөлімі — 3D ракурс триггерлері */
+/* Hero content сол жақта — оң жақта 3D ноутбук көрінеді */
+.hero {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 560px;
+}
+
+.hero__visual--portrait-only {
+  position: relative;
+  z-index: 2;
+  justify-self: end;
+  align-self: end;
+  max-width: 180px;
+  margin-top: auto;
+}
+
 .scroll-stage {
   position: relative;
   z-index: 1;
@@ -41,51 +61,14 @@ footer {
   padding-bottom: 2rem;
 }
 
-.scroll-section__hint {
-  position: absolute;
-  right: clamp(1rem, 4vw, 3rem);
-  top: 50%;
-  transform: translateY(-50%);
-  max-width: 220px;
-  padding: 1rem 1.25rem;
-  border-radius: var(--radius);
-  background: rgba(15, 23, 42, 0.45);
-  border: 1px solid rgba(168, 85, 247, 0.25);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  pointer-events: none;
-}
-
-.scroll-section__hint span {
-  display: block;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent-purple);
-  margin-bottom: 0.35rem;
-  font-weight: 600;
-}
-
-.scroll-section__hint strong {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.scroll-section__hint p {
-  margin-top: 0.35rem;
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  line-height: 1.45;
-}
-
 @media (max-width: 900px) {
-  .scroll-section__hint {
-    display: none;
+  .webgl-root {
+    opacity: 0.42;
   }
 
-  .webgl-root {
-    opacity: 0.55;
+  .hero__visual--portrait-only {
+    max-width: 120px;
+    margin: 1.5rem auto 0;
   }
 }
 
