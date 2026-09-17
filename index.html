@@ -16,9 +16,10 @@
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
 </head>
-<body class="has-promo-banner">
+<body>
+  <div id="webgl-root" class="webgl-root"></div>
 
   <!-- Артқы фон — неонды бұлдыр шеңберлер -->
   <div class="bg-orbs" aria-hidden="true">
@@ -122,8 +123,16 @@
       </div>
     </section>
 
-    <!-- ===== ABOUT & TECH STACK ===== -->
-    <section class="about section" id="about">
+    <!-- ===== 3D SCROLL STAGE (Section 1–3) ===== -->
+    <div id="scroll-stage" class="scroll-stage">
+
+    <!-- Section 1: About — 0° -->
+    <section class="about section scroll-section" id="about" data-section="1">
+      <div class="scroll-section__hint glass">
+        <span>Section 01</span>
+        <strong>0° ракурс</strong>
+        <p>Мен туралы — 3D қол бастапқы позицияда</p>
+      </div>
       <div class="container">
         <div class="section__header">
           <span class="section__tag">Мен туралы</span>
@@ -186,8 +195,13 @@
       </div>
     </section>
 
-    <!-- ===== PROJECTS ===== -->
-    <section class="projects section" id="projects">
+    <!-- Section 2: Projects — 90° -->
+    <section class="projects section scroll-section" id="projects" data-section="2">
+      <div class="scroll-section__hint glass">
+        <span>Section 02</span>
+        <strong>90° ракурс</strong>
+        <p>Жобалар — қол бүйірден көрінеді</p>
+      </div>
       <div class="container">
         <div class="section__header">
           <span class="section__tag">Портфолио</span>
@@ -382,8 +396,13 @@
       </div>
     </section>
 
-    <!-- ===== SERVICES ===== -->
-    <section class="services section" id="services">
+    <!-- Section 3: Services — 180° -->
+    <section class="services section scroll-section" id="services" data-section="3">
+      <div class="scroll-section__hint glass">
+        <span>Section 03</span>
+        <strong>180° ракурс</strong>
+        <p>Қызметтер — қол толық бұрылған</p>
+      </div>
       <div class="container">
         <div class="section__header">
           <span class="section__tag">Қызметтер</span>
@@ -446,6 +465,9 @@
         </div>
       </div>
     </section>
+
+    </div>
+    <!-- ===== /3D SCROLL STAGE ===== -->
 
     <!-- ===== CONTACT ===== -->
     <section class="contact section" id="contact">
@@ -536,6 +558,7 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="/script.js"></script>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
