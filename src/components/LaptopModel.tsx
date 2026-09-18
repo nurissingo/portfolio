@@ -173,15 +173,14 @@ export function LaptopModel() {
   const cloned = useMemo(() => scene.clone(true), [scene])
 
   useLayoutEffect(() => {
-    // Айнаны алып тастау + дұрыс бетке қарау
     screenMap.colorSpace = THREE.SRGBColorSpace
     screenMap.anisotropy = 16
-    screenMap.flipY = true
+    screenMap.flipY = false
     screenMap.center.set(0.5, 0.5)
     screenMap.rotation = 0
-    screenMap.repeat.set(-1, 1) // horizontal un-mirror
+    screenMap.repeat.set(1, 1)
     screenMap.offset.set(0, 0)
-    screenMap.wrapS = THREE.RepeatWrapping
+    screenMap.wrapS = THREE.ClampToEdgeWrapping
     screenMap.wrapT = THREE.ClampToEdgeWrapping
     screenMap.needsUpdate = true
 
@@ -202,25 +201,23 @@ export function LaptopModel() {
       if (mesh.name === 'back') back = mesh
       if (mesh.name === 'body') body = mesh
 
+      if (mesh.name === 'matte') {
+        // Экран өздігінен жарқырайды — қара болып қалмайды
+        mesh.material = new THREE.MeshBasicMaterial({
+          map: screenMap,
+          toneMapped: false,
+          side: THREE.DoubleSide,
+          color: 0xffffff,
+        })
+        mesh.visible = true
+        return
+      }
+
       const mats = Array.isArray(mesh.material) ? mesh.material : [mesh.material]
       mats.forEach((mat) => {
         if (!mat) return
         const m = mat as THREE.MeshStandardMaterial
         if ('envMapIntensity' in m) m.envMapIntensity = 1.45
-
-        if (mesh.name === 'matte' || m.name === 'matte') {
-          mesh.visible = true
-          m.map = screenMap
-          m.emissiveMap = screenMap
-          m.emissive = new THREE.Color('#ffffff')
-          m.emissiveIntensity = 0.55
-          m.roughness = 0.88
-          m.metalness = 0
-          m.toneMapped = false
-          // Экран ішке (клавиатураға) қарасын — сыртқы бетті емес
-          m.side = THREE.BackSide
-        }
-
         if (m.name === 'aluminium' || m.name?.toLowerCase().includes('frame')) {
           m.metalness = 0.92
           m.roughness = 0.24
