@@ -175,9 +175,10 @@ export function LaptopModel() {
   useLayoutEffect(() => {
     screenMap.colorSpace = THREE.SRGBColorSpace
     screenMap.anisotropy = 16
-    screenMap.flipY = false
+    // Notch жоғарыда, контент дұрыс: 180° бұру
+    screenMap.flipY = true
     screenMap.center.set(0.5, 0.5)
-    screenMap.rotation = 0
+    screenMap.rotation = Math.PI
     screenMap.repeat.set(1, 1)
     screenMap.offset.set(0, 0)
     screenMap.wrapS = THREE.ClampToEdgeWrapping
